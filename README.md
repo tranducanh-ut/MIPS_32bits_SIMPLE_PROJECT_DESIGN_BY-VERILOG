@@ -13,6 +13,47 @@ This project implements a **simple 32-bit MIPS processor** in Verilog.
 ⚠️ *Currently, jump instructions are not supported.*
 
 ---
+## ⚡ Processor Design Style: Single-Cycle (No Pipeline)
+
+This project implements a **Single-Cycle MIPS Processor**, meaning all **5 classic stages** of instruction execution are completed **within one clock cycle**:
+
+1. **IF (Instruction Fetch)** – Fetch instruction from instruction memory  
+2. **ID (Instruction Decode & Register Read)** – Decode opcode, read registers  
+3. **EX (Execute / ALU)** – Perform arithmetic or logical operation  
+4. **MEM (Memory Access)** – Load or store data from/to memory  
+5. **WB (Write Back)** – Write result back into the register file  
+
+🕐 In this model, the **entire instruction finishes in exactly one clock cycle**, regardless of instruction type.
+
+---
+
+### ✅ Advantages of Single-Cycle Design
+- **Simplicity** – The control unit is straightforward since every instruction completes in one cycle.  
+- **Easy Debugging** – No hazards (data, control, or structural) because instructions do not overlap.  
+- **Fast for Simple Programs** – For small programs with few instructions, single-cycle execution feels immediate.  
+- **Clear Instruction Flow** – Easy for students or beginners to visualize the datapath since all stages happen sequentially inside one cycle.  
+- **Deterministic Timing** – Each instruction always takes exactly one cycle → predictable performance.  
+- **No Hazard Handling Logic Needed** – Unlike pipelined processors, no forwarding, stalling, or branch prediction is required.  
+- **Great for Learning** – Serves as an excellent educational model to understand the fundamentals of processor architecture.  
+
+---
+
+### ❌ Disadvantages of Single-Cycle Design
+- **Long Clock Period** – The cycle time must be long enough to accommodate the slowest instruction (e.g., `lw` which includes memory access).  
+- **Wasted Potential** – Simple instructions like `add` finish quickly but must still wait for the long cycle time.  
+- **Poor Scalability** – As more complex instructions are added, the clock period must increase, slowing down the entire processor.  
+- **Inefficient Hardware Utilization** – Functional units (ALU, Memory, etc.) are only used once per cycle, leaving them idle most of the time.  
+- **Low Performance** – Compared to pipelined designs, throughput is significantly lower since only one instruction is processed at a time.  
+- **Difficult for Real Applications** – While educationally useful, single-cycle CPUs are not practical for large-scale computing tasks.  
+- **Inflexibility** – Cannot easily adapt to advanced features such as caches, interrupts, or superscalar execution.  
+- **Instruction Latency Uniformity** – Forces all instructions, regardless of complexity, to share the same execution time, leading to inefficiency.  
+
+---
+
+📌 **Summary:**  
+The **Single-Cycle design** is simple, clean, and ideal for educational use, but it comes with **serious performance limitations**. Modern processors almost always use pipelining (or even deeper optimizations) to overcome these bottlenecks.  
+
+---
 
 ## 📂 Project Structure
 
