@@ -16,17 +16,17 @@ This project implements a **simple 32-bit MIPS processor** in Verilog.
 
 ## 📂 Project Structure
 
-📦 MIPS_32BIT_SIMPLE_PROJECT
-┣ 📁 test_case # Contains .hex files generated from Assembly
-┣ 📁 source1 # Contains 5 Verilog source files
-┃ ┣ 📄 MIPS_TOP.v # Top-level module, integrates all pipeline stages
-┃ ┣ 📄 FETCH.v # Instruction Fetch stage (loads from Instruction Memory)
-┃ ┣ 📄 Decode.v # Instruction Decode + Register File
-┃ ┣ 📄 ALU.v # Arithmetic and Logic Unit
-┃ ┗ 📄 MEM.v # Memory stage (Load/Store + Writeback)
-┣ 📁 simulation # Testbench files for program execution
-┣ 📷 wave_form.png # Example waveform from one of the test cases
-┗ 📄 README.md
+📦 MIPS_32BIT_SIMPLE_PROJECT  
+┣ 📁 test_case # Contains .hex files generated from Assembly  
+┣ 📁 source1 # Contains 5 Verilog source files  
+┃ ┣ 📄 MIPS_TOP.v # Top-level module, integrates all pipeline stages  
+┃ ┣ 📄 FETCH.v # Instruction Fetch stage (loads from Instruction Memory)  
+┃ ┣ 📄 Decode.v # Instruction Decode + Register File  
+┃ ┣ 📄 ALU.v # Arithmetic and Logic Unit  
+┃ ┗ 📄 MEM.v # Memory stage (Load/Store + Writeback)  
+┣ 📁 simulation # Testbench files for program execution  
+┣ 📷 wave_form.png # Example waveform from one of the test cases  
+┗ 📄 README.md  
 
 
 
@@ -46,10 +46,7 @@ This project implements a **simple 32-bit MIPS processor** in Verilog.
 
 ---
 
-## 📸 Example Simulation Output
-<img src="./wave_form.png" alt="Waveform Example" width="600"/>
 
----
 
 ## 📬 Connect with Me
 
